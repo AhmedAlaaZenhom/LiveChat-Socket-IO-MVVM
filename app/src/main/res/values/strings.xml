@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Live Chat</string>
+    <string name="please_wait">Please wait</string>
+    <string name="connection_error">Connection error</string>
+    <string name="unknown_error">Something went wrong</string>
+    <string name="requierd_field">Required field</string>
+    <string name="nick_name">Nick name</string>
+    <string name="login">Login</string>
+    <string name="send">SEND</string>
+    <string name="enter_message">Enter a message</string>
+    <string name="new_message_s">New Message(s)</string>
+    <string name="no_more_messages_found">No more messages found</string>
+    <string name="clear_chat">Clear chat</string>
+    <string name="settings">Settings</string>
+    <string name="not_connected">Not Connected</string>
+    <string name="connected">Connected</string>
+    <string name="reconnecting">Reconnecting</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="chat_history_deleted">Chat history deleted</string>
+    <string name="application_language">Application language</string>
+    <string name="logout">Logout</string>
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+    <string name="select_language">Select language</string>
+    <string name="logout_question">Are you sure you want to logout and exit app ?</string>
+    <string name="cancel">Cancel</string>
+    <string name="close_app">Close app</string>
+    <string name="change_language_text">You have to close and re-open the application to change the app locale</string>
+</resources>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Live Chat</string>
+    <string name="please_wait">برجاء الإنتظار</string>
+    <string name="connection_error">خطأ في الإتصال</string>
+    <string name="unknown_error">حدث خطأ ما</string>
+    <string name="requierd_field">عنصر مطلوب</string>
+    <string name="nick_name">أدخل إسم مستعار</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="send">إرسال</string>
+    <string name="enter_message">أدخل رسالة</string>
+    <string name="new_message_s">رسائل جديدة</string>
+    <string name="no_more_messages_found">لم يتم العثور على المزيد من الرسائل</string>
+    <string name="clear_chat">مسح سجل الدردشة</string>
+    <string name="settings">الإعدادات</string>
+    <string name="not_connected">غير متصل</string>
+    <string name="connected">متصل</string>
+    <string name="reconnecting">إعادة الاتصال</string>
+    <string name="disconnected">انقطع الاتصال</string>
+    <string name="chat_history_deleted">تم حذف سجل الدردشة</string>
+    <string name="application_language">لغة التطبيق</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="arabic">العرية</string>
+    <string name="english">الإنجليزية</string>
+    <string name="select_language">اختر اللغة</string>
+    <string name="logout_question">هل أنت متأكد أنك تريد تسجيل الخروج وإغلاق التطبيق ؟</string>
+    <string name="cancel">إلغاء</string>
+    <string name="close_app">أغلق التطبيق</string>
+    <string name="change_language_text">يجب عليك إغلاق التطبيق وإعادة فتحه لتغيير لغة التطبيق</string>
+</resources>
