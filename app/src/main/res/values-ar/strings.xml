@@ -19,11 +19,11 @@
     <string name="chat_history_deleted">تم حذف سجل الدردشة</string>
     <string name="application_language">لغة التطبيق</string>
     <string name="logout">تسجيل الخروج</string>
-    <string name="arabic">العرية</string>
+    <string name="arabic">العربية</string>
     <string name="english">الإنجليزية</string>
     <string name="select_language">اختر اللغة</string>
-    <string name="logout_question">هل أنت متأكد أنك تريد تسجيل الخروج وإغلاق التطبيق ؟</string>
+    <string name="logout_question">هل أنت متأكد أنك تريد تسجيل الخروج ؟</string>
     <string name="cancel">إلغاء</string>
     <string name="close_app">أغلق التطبيق</string>
-    <string name="change_language_text">يجب عليك إغلاق التطبيق وإعادة فتحه لتغيير لغة التطبيق</string>
+    <string name="change_language_text">هل أنت متأكد من أنك تريد تغيير لغة التطبيق ؟</string>
 </resources>

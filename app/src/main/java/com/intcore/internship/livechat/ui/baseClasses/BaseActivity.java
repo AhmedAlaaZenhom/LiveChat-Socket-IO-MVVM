@@ -31,11 +31,6 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
 
     public abstract BaseViewModel getViewModel();
 
-    /*@Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }*/
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

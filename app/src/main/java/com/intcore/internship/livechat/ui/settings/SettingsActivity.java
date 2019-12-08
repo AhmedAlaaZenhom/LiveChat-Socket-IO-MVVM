@@ -17,6 +17,8 @@ import com.intcore.internship.livechat.data.sharedPreferences.PreferenceHelper;
 import com.intcore.internship.livechat.databinding.ActivitySettingsBinding;
 import com.intcore.internship.livechat.ui.baseClasses.BaseActivity;
 import com.intcore.internship.livechat.ui.baseClasses.BaseViewModel;
+import com.jakewharton.processphoenix.ProcessPhoenix;
+import com.yariksoffice.lingver.Lingver;
 
 import java.util.Objects;
 
@@ -81,7 +83,6 @@ public class SettingsActivity extends BaseActivity<ActivitySettingsBinding> {
             }
             dialog.dismiss();
         });
-
         AlertDialog languageAlertDialog = builder.create();
         binding.languageSettingsLayout.setOnClickListener(view -> languageAlertDialog.show());
     }
@@ -93,7 +94,6 @@ public class SettingsActivity extends BaseActivity<ActivitySettingsBinding> {
         builder.setPositiveButton(R.string.logout, (dialogInterface, i) -> {
             try {
                 ((ActivityManager) Objects.requireNonNull(getSystemService(ACTIVITY_SERVICE))).clearApplicationUserData();
-                finishAffinity();
             } catch (NullPointerException e) {
                 Log.d(TAG, e.toString());
             }
@@ -110,14 +110,19 @@ public class SettingsActivity extends BaseActivity<ActivitySettingsBinding> {
         builder.setTitle(R.string.application_language);
         builder.setMessage(R.string.change_language_text);
         builder.setPositiveButton(R.string.close_app, (dialogInterface, i) -> {
+            Lingver.getInstance().setLocale(this,locale);
             viewModel.changeLocale(locale);
-            finishAffinity();
+            restartApplication();
         });
         builder.setNegativeButton(R.string.cancel, (dialogInterface, i) -> {
 
         });
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void restartApplication() {
+        ProcessPhoenix.triggerRebirth(this);
     }
 
     @Override

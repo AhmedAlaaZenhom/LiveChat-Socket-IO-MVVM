@@ -42,12 +42,12 @@ public class PreferenceHelper {
         editor.commit();
     }
 
-
-    public void setUserLoggedIn(){
-        save(LOGGED_IN, String.valueOf(true)); ;
+    public void setUserLoggedIn() {
+        save(LOGGED_IN, String.valueOf(true));
+        ;
     }
 
-    public boolean isUserLoggedIn(){
+    public boolean isUserLoggedIn() {
         return containsKey(LOGGED_IN);
     }
 
@@ -55,15 +55,20 @@ public class PreferenceHelper {
         save(USER_NAME, userName);
     }
 
-    public String getUserName(){
-        return get(USER_NAME) ;
+    public String getUserName() {
+        return get(USER_NAME);
     }
 
-    public String getUserApiToken(){
-        return get(USER_API_TOKEN) ;
+    public String getUserApiToken() {
+        return get(USER_API_TOKEN);
     }
-    public String getSavedLocale(){
-        return get(LOCALE) ;
+
+    public void setCurrentLocale(String locale) {
+        save(LOCALE, locale.contains(LOCALE_ARABIC) ? LOCALE_ARABIC : LOCALE_ENGLISH);
+    }
+
+    public String getSavedLocale() {
+        return get(LOCALE);
     }
 
 

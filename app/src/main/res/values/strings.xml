@@ -22,8 +22,8 @@
     <string name="arabic">Arabic</string>
     <string name="english">English</string>
     <string name="select_language">Select language</string>
-    <string name="logout_question">Are you sure you want to logout and exit app ?</string>
+    <string name="logout_question">Are you sure you want to logout ?</string>
     <string name="cancel">Cancel</string>
     <string name="close_app">Close app</string>
-    <string name="change_language_text">You have to close and re-open the application to change the app locale</string>
+    <string name="change_language_text">Are you sure you want to change the app locale ?</string>
 </resources>

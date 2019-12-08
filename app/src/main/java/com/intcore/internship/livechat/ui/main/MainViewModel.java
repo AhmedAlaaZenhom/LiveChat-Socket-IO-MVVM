@@ -49,6 +49,10 @@ public class MainViewModel extends BaseViewModel {
         return connectivityStateLD;
     }
 
+    String getSavedLocale() {
+        return dataManager.getSavedLocale();
+    }
+
     void getHistoryChatMessages() {
         getCompositeDisposable().add(
                 dataManager.getChatMessages(HISTORY_MESSAGES_DEFAULT_COUNT)
@@ -88,6 +92,4 @@ public class MainViewModel extends BaseViewModel {
     void sendMessage(String messageText) {
         dataManager.sendMessage(messageText);
     }
-
-
 }

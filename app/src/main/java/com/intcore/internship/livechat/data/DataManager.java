@@ -78,6 +78,10 @@ public class DataManager implements EventListener {
 
     // Shared Preferences
 
+    public void setCurrentLocale(String locale) {
+        preferenceHelper.setCurrentLocale(locale);
+    }
+
     public String getSavedLocale(){
         return preferenceHelper.getSavedLocale() ;
     }

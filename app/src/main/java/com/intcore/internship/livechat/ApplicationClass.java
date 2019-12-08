@@ -4,7 +4,9 @@ import android.app.Application;
 import android.util.Log;
 
 import com.intcore.internship.livechat.data.DataManager;
+import com.intcore.internship.livechat.data.sharedPreferences.PreferenceHelper;
 import com.intcore.internship.livechat.di.CompositionRoot;
+import com.yariksoffice.lingver.Lingver;
 
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -31,6 +33,7 @@ public class ApplicationClass extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        Lingver.init(this, PreferenceHelper.LOCALE_ENGLISH) ;
         compositionRoot = new CompositionRoot(this);
         dataManager = new DataManager(this) ;
     }

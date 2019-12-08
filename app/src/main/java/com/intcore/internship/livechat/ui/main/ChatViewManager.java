@@ -32,14 +32,15 @@ public class ChatViewManager extends RecyclerView.Adapter {
 
     ChatViewManager(RecyclerView recyclerView, Context context, boolean isCurrentLocaleAR, Listener listener) {
         this.list = new ArrayList<>();
-        this.layoutManager = new LinearLayoutManager(context);
         this.isCurrentLocaleAR = isCurrentLocaleAR;
         this.listener = listener;
         this.recyclerView = recyclerView;
+        layoutManager = new LinearLayoutManager(context);
         setUpRecyclerView();
     }
 
     private void setUpRecyclerView() {
+        layoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(this);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {

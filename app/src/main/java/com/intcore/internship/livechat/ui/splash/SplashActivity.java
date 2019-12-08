@@ -4,6 +4,9 @@ import androidx.databinding.library.baseAdapters.BR;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -15,6 +18,13 @@ import com.intcore.internship.livechat.ui.login.LoginActivity;
 import com.intcore.internship.livechat.ui.main.MainActivity;
 
 public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
+
+    public static void startActivity(Activity activity){
+        Intent intent = activity.getBaseContext().getPackageManager()
+                .getLaunchIntentForPackage(activity.getBaseContext().getPackageName() );
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        activity.startActivity(intent);
+    }
 
     private SplashViewModel viewModel ;
 

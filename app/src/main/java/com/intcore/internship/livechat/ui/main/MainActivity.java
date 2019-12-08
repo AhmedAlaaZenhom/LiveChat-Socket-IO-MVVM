@@ -19,6 +19,7 @@ import com.intcore.internship.livechat.BR;
 import com.intcore.internship.livechat.R;
 import com.intcore.internship.livechat.data.model.ChatMessage;
 import com.intcore.internship.livechat.data.model.ConnectivityStates;
+import com.intcore.internship.livechat.data.sharedPreferences.PreferenceHelper;
 import com.intcore.internship.livechat.databinding.ActivityMainBinding;
 import com.intcore.internship.livechat.ui.baseClasses.BaseActivity;
 import com.intcore.internship.livechat.ui.baseClasses.BaseViewModel;
@@ -106,7 +107,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements C
                 viewModel.getHistoryChatMessages(chatViewManager.getFirstMessageTimeStamp());
         });
         PicassoHelper.loadResourceImage(R.drawable.chat_background, binding.backgroundImage);
-        chatViewManager = new ChatViewManager(binding.messagesRV, this, false, this);
+        boolean isCurrentLocaleAR = viewModel.getSavedLocale().equals(PreferenceHelper.LOCALE_ARABIC);
+        chatViewManager = new ChatViewManager(binding.messagesRV, this, isCurrentLocaleAR, this);
+        chatViewManager.clearMessages();
         binding.sendMessageBtn.setOnClickListener(v -> validateAndSendMessage());
         binding.scrollToBottomLayout.setOnClickListener(v -> chatViewManager.scrollToBottom());
         binding.newMessagesBtn.setOnClickListener(v -> chatViewManager.scrollToBottom());
@@ -117,7 +120,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements C
         super.setUpObservers();
         final Observer<ChatMessage> newMessagesObserver = chatMessage ->
                 chatViewManager.insertMessagesToBottom(
-                        chatViewManager.findIfExisting(chatMessage) == -1,
+                        chatMessage.isByMe() && chatViewManager.findIfExisting(chatMessage) == -1,
                         chatMessage
                 );
         viewModel.getNewMessagesLD().observe(this, newMessagesObserver);

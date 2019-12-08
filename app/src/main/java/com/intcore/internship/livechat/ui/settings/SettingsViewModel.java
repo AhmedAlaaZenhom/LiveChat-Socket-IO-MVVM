@@ -21,6 +21,6 @@ public class SettingsViewModel extends BaseViewModel {
     }
 
     void changeLocale(String locale) {
-
+        dataManager.setCurrentLocale(locale);
     }
 }
